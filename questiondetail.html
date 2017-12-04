@@ -313,14 +313,14 @@
 					var u = navigator.userAgent;
 					if(u.indexOf('Android') > -1 || u.indexOf('Linux') > -1) { //安卓手机
 						//执行安卓的
-						alert("azsj");
-						// window.location.href = "mobile/index.html";
+						
+						 window.location.href = "http://sj.qq.com/myapp/detail.htm?apkName=com.threeti.anquangu";
 					} else if(u.indexOf('iPhone') > -1) { //苹果手机
 						//执行苹果的
-						// window.location.href = "mobile/index.html";
-						alert("pgsj");
+						window.location.href = "https://itunes.apple.com/cn/app/%E5%AE%89%E5%85%A8%E8%B0%B7-%E5%8F%AF%E8%BF%BD%E6%BA%AF%E5%86%9C%E4%B8%9A%E4%BE%9B%E5%BA%94%E9%93%BE%E6%9C%8D%E5%8A%A1%E5%B9%B3%E5%8F%B0/id1273939580?mt=8";
+						//alert("pgsj");
 					} else if(u.indexOf('Windows Phone') > -1) { //winphone手机
-						alert("WP版暂未开发!");
+						mui.toast("WP版暂未开发!");
 						// window.location.href = "mobile/index.html";
 					}
 				});
