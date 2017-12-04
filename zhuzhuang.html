@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>行情图</title>
+			<script src="js/mui.min.js"></script>
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="css/mystyle.css" />
+		<link rel="stylesheet" href="css/style.css" />
+		<script type="text/javascript" src="js/jquery-2.2.3.min.js"></script>
+		<script type="text/javascript" src="js/config.js"></script>
+
+	</head>
+
+	<body class="green">
+		<!--<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">行情图</h1>
+		</header>-->
+		<div class="mui-content green">
+
+			<!--<div class="p_t_20 white hangqing">
+				<div class="left">
+					<div class="quan m_l_15 ">
+						<img src="imgs/white.png" class="left" />
+						<p class="left size16 m_l_15 m_t_25">玉米</p>
+					</div>
+					<div class="clear"></div>
+				</div>
+				<div class="right">
+					<div class="concertration size14 m_r_15 m_t_15" id="con-btn">
+						+关注
+					</div>
+				</div>
+				<div class="clear"></div>
+			</div>-->
+
+			<p class="hq-time size14" style="text-align: center;" id="hq-time"></p>
+			<div style="width: 100%;">
+				<div id="main" style="height:400px; width: 100%;">
+
+				</div>
+			</div>
+		</div>
+
+		<script type="text/javascript" src="js/template.js"></script>
+		<script type="text/javascript" src="js/template-config.js"></script>
+		<script type="text/javascript" src="js/globle.js"></script>
+		<script type="text/javascript" src="js/echarts.min.js"></script>
+		<script type="text/javascript">
+			var productId = getUrlParam('productId') ? getUrlParam('productId') : '';
+			getQuotationByProductId(productId);
+
+			function show() {
+				var mydate = new Date();
+				var year = mydate.getFullYear();
+				var month = mydate.getMonth() + 1;
+				var data = mydate.getDate();
+				if(month<10){
+					month= "0"+month;
+				}
+				if(data<10){
+					data= "0"+data;
+				}
+				var str = "" + year + "-";
+				str += month + "-";
+				str +=data ;
+				return str;
+			}
+
+			$("#hq-time").html(show());
+		</script>
+	</body>
+
+</html>
